@@ -8,7 +8,8 @@
 发送邮件
 
 
-ansible
+ansible配置
+
 1：管理节点生成SSH-KEY
 
 #ssh-keygen
@@ -30,3 +31,23 @@ ansible
 ---------------------
 
 本文来自 qq_33324608 的CSDN 博客 ，全文地址请点击：https://blog.csdn.net/qq_33324608/article/details/54407108?utm_source=copy 
+
+4：配置ssh，配置完key后，需要在sshd_config文件中开启key认证
+$ vim /etc/ssh/sshd_config
+PubkeyAuthentication yes  //将该项改为yes 
+
+5：修改完成后，通过/etc/init.d/sshd restart 重启ssh服务重新加载配置。如果想要禁用密码认证，更改如下项：
+
+$ vim /etc/ssh/sshd_config
+UsePAM yes
+为
+UserPAM no
+之后添加托管服务器ip至ansible配置中
+
+vim /etc/ansible/hosts
+修改如下图所示：
+
+[servers]
+10.107.105.81 ansible_ssh_user=asherli  ansible_sudo_pass='123'
+10.107.105.137 ansible_ssh_user=asherli  ansible_sudo_pass='123'
+10.107.105.141 ansible_ssh_user=asherli  ansible_sudo_pass='123'
