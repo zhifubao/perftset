@@ -48,6 +48,6 @@ vim /etc/ansible/hosts
 修改如下图所示：
 
 [servers]
-10.107.105.81 ansible_ssh_user=asherli  ansible_ssh_port=36000  ansible_sudo_pass='123'
-10.107.105.137 ansible_ssh_user=asherli  ansible_sudo_pass='123'
-10.107.105.141 ansible_ssh_user=asherli  ansible_sudo_pass='123'
+ip ansible_ssh_user=asherli  ansible_ssh_port=36000  ansible_sudo_pass='123'
+ip ansible_ssh_user=asherli  ansible_sudo_pass='123'
+ip ansible_ssh_user=asherli  ansible_sudo_pass='123'
