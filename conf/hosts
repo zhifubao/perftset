@@ -1,0 +1,3 @@
+[all]
+143ip ansible_ssh_user=root   ansible_ssh_port=port ansible_sudo_pass=''
+1371p ansible_ssh_user=root   ansible_ssh_port=port ansible_sudo_pass=''
