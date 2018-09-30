@@ -109,13 +109,19 @@ def installNmon(ans, ip):
     exeShell("ansible %s -m synchronize -a 'src=/root/nmon dest=/data1/gavinouyang/test/perftset/{{inventory_hostname}}/  mode=pull'" % ip)
 
 if __name__ == "__main__":
+#new一个ans对象用来存储配置
     ans = Ans()
+#解析配置文件，存储到ans对象中
     parser("./conf/config.ini", ans)
-    exeAns(ans)
-    installNmon(ans)
-
+#安装ansible
     installAns()
+#生成密钥
     generateKeygen()
+#copy密钥到对端
     copyKeygen('10.107.105.143', '')passwd
+#安装nmon
     installNmon(ans, '10.107.105.143')
+#启动nmon
+
+#收集nmon数据
 
