@@ -56,7 +56,7 @@ def installNmon(ans):
 
 
 if __name__ == "__main__":
-#ceshi2
+#ceshi3
     ans = Ans()
     parser("./conf/config.ini", ans)
     exeAns(ans)
